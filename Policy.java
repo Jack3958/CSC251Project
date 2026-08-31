@@ -104,7 +104,7 @@ public class Policy
    }
    
    //method for returning the policyholder's last name
-   public String getPolicyholderLstNm()
+   public String getPolicyholderLastName()
    {
       return policyholderLstNm;
    }
@@ -116,7 +116,7 @@ public class Policy
    }
    
    //method for returning the policyholder's smoking status
-   public String getSmokingStaus()
+   public String getPolicyholderSmokingStaus()
    {
       return policyholderSmokingStatus;
    }
