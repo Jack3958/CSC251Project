@@ -47,6 +47,7 @@ public class Project_Jack_Doerr
       //Policy object with all of the user's info added through the args
       Policy demo = new Policy(polNumber, proName, firstNm, lastNm, age, smokeStat, h, w);
       
+      //Output of the program
       System.out.println();
       System.out.println("Policy Number: " + demo.getPolicyNumber());
       System.out.println("Provider Name: " + demo.getProviderName());
