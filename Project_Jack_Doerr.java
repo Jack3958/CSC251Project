@@ -20,6 +20,7 @@ public class Project_Jack_Doerr
       //collects all of the user's input
       System.out.print("Please enter the Policy Number: ");
       polNumber = keyboard.nextInt();
+      keyboard.nextLine();
       
       System.out.print("Please enter the Provider Name: ");
       proName = keyboard.nextLine();
@@ -32,6 +33,7 @@ public class Project_Jack_Doerr
       
       System.out.print("Please enter the Policyholder's Age: ");
       age = keyboard.nextInt();
+      keyboard.nextLine();
       
       System.out.print("Please enter the Policyholder's Smoking Status (smoker/non-smoker): ");
       smokeStat = keyboard.nextLine();
@@ -54,7 +56,7 @@ public class Project_Jack_Doerr
       System.out.println("Policyholder's Smoking Status: " + demo.getPolicyholderSmokingStatus());
       System.out.println("Policyholder's Height: " + demo.getPolicyholderHeight() + " inches");
       System.out.println("Policyholder's Weight: " + demo.getPolicyholderWeight() + " pounds");
-      System.out.println("Policyholder's BMI: " + demo.getPolicyholderBMI());
-      System.out.println("Policy Price: " + demo.getPolicyPrice());
+      System.out.printf("Policyholder's BMI: %.2f%n", demo.getPolicyholderBMI());
+      System.out.printf("Policy Price: %.2f%n", demo.getPolicyPrice());
    }
 }

@@ -116,7 +116,7 @@ public class Policy
    }
    
    //method for returning the policyholder's smoking status
-   public String getPolicyholderSmokingStaus()
+   public String getPolicyholderSmokingStatus()
    {
       return policyholderSmokingStatus;
    }
@@ -142,7 +142,7 @@ public class Policy
    //method for returning the policy price
    public double getPolicyPrice()
    {
-      int policyPrice = 600;
+      double policyPrice = 600;
       if (policyholderAge > 50)
       {
          policyPrice += 75;
