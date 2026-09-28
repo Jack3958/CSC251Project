@@ -27,7 +27,7 @@ public class Policy
       //initializing variables for the policy class according to the constructors fields
       this.policyNum = policyNum;
       this.providerName = providerName;
-      this.policyHolder = policyHolder;
+      this.policyHolder = new PolicyHolder(policyHolder);
       policyTracker++;
    }
    
@@ -246,7 +246,7 @@ public class Policy
       return str;
    }
    
-   public int getPolicyCount()
+   public static int getPolicyCount()
    {
       return policyTracker;
    }

@@ -53,7 +53,7 @@ public class Project_Jack_Doerr
          if (fileReader.hasNext())
             fileReader.nextLine();
          
-         policyList.add(new Policy(polNumber, proName, firstNm, lastNm, age, smokeStat, h, w));
+         policyList.add(new Policy(polNumber, proName,new PolicyHolder(firstNm, lastNm, age, smokeStat, h, w)));
          counter++;
       }
       while (fileReader.hasNext());
@@ -77,21 +77,13 @@ public class Project_Jack_Doerr
             nonSmokeCount++;
          }
          
-         System.out.println("Policy Number: " + demo.getPolicyNumber());
-         System.out.println("Provider Name: " + demo.getProviderName());
-         System.out.println("Policyholder's First Name: " + demo.getPolicyholderFirstName());
-         System.out.println("Policyholder's Last Name: " + demo.getPolicyholderLastName());
-         System.out.println("Policyholder's Age: " + demo.getPolicyholderAge());
-         System.out.println("Policyholder's Smoking Status: " + demo.getPolicyholderSmokingStatus());
-         System.out.println("Policyholder's Height: " + demo.getPolicyholderHeight() + " inches");
-         System.out.println("Policyholder's Weight: " + demo.getPolicyholderWeight() + " pounds");
-         System.out.printf("Policyholder's BMI: %.2f%n", demo.getPolicyholderBMI());
-         System.out.printf("Policy Price: %.2f%n", demo.getPolicyPrice());
-         System.out.println();
+         System.out.println(demo);
          
          x++;
       }
       
+      System.out.println("There were " + Policy.getPolicyCount() + " Policy objects created.");
+      System.out.println();
       System.out.println("The number of policies with a smoker is: " + smokeCount);
       System.out.println("The number of policies with a non-smoker is: " + nonSmokeCount);
    }

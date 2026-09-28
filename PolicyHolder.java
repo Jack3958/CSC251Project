@@ -41,6 +41,21 @@ public class PolicyHolder
    }
    
    /*
+      Copy Constructor
+      
+      @param copyPolicyHolder A PolicyHolder object
+   */
+   public PolicyHolder(PolicyHolder copyPolicyHolder)
+   {
+      this.firstName = copyPolicyHolder.firstName;
+      this.lastName = copyPolicyHolder.lastName;
+      this.age = copyPolicyHolder.age;
+      this.smokingStatus = copyPolicyHolder.smokingStatus;
+      this.height = copyPolicyHolder.height;
+      this.weight = copyPolicyHolder.weight;
+   }
+   
+   /*
       Method for changing the policyholder's first name.
       
       @param firstName The policyholder's first name.
@@ -68,7 +83,7 @@ public class PolicyHolder
       @param age The policyholder's age.
       @return Returns void.
    */
-   public void setPolicyholderAge(int age)
+   public void setPolicyHolderAge(int age)
    {
       this.age = age;
    }
@@ -79,7 +94,7 @@ public class PolicyHolder
       @param smokingStatus The policyholder's smoking status.
       @return Returns void.
    */
-   public void setSmokingStaus(String smokingStatus)
+   public void setPolicyHolderSmokingStatus(String smokingStatus)
    {
       this.smokingStatus = smokingStatus;
    }
@@ -90,7 +105,7 @@ public class PolicyHolder
       @param height The policyholder's height.
       @return Returns void.
    */
-   public void setPolicyholderHeight(double height)
+   public void setPolicyHolderHeight(double height)
    {
       this.height = height;
    }
@@ -101,7 +116,7 @@ public class PolicyHolder
       @param weight The policyholder's weight.
       @return Returns void.
    */
-   public void setPolicyholderWeight(double weight)
+   public void setPolicyHolderWeight(double weight)
    {
       this.weight = weight;
    }
@@ -184,7 +199,7 @@ public class PolicyHolder
    {
       String str = "Policyholder's First Name: " + firstName +
                    "\nPolicyholder's Last Name: " + lastName +
-                   "\nPolicyholder's Age: " + age +`
+                   "\nPolicyholder's Age: " + age +
                    "\nPolicyholder's Smoking Status: " + smokingStatus +
                    "\nPolicyholder's Height: " + height + " inches" +
                    "\nPolicyholder's Weight: " + weight + " pounds" +
