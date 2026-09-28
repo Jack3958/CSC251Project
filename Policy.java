@@ -3,6 +3,7 @@ public class Policy
    private int policyNum;
    private String providerName;
    private PolicyHolder policyHolder;
+   private static int policyTracker = 0;
      
    //no args Constructor
    public Policy()
@@ -11,6 +12,7 @@ public class Policy
       policyNum = 0;
       providerName = "";
       policyHolder = new PolicyHolder();
+      policyTracker++;
    }
    
    /*
@@ -26,6 +28,7 @@ public class Policy
       this.policyNum = policyNum;
       this.providerName = providerName;
       this.policyHolder = policyHolder;
+      policyTracker++;
    }
    
    /*
