@@ -1,26 +1,16 @@
 public class Policy
 {
-   int policyNum;
-   String providerName;
-   String policyholderFstNm;
-   String policyholderLstNm;
-   int policyholderAge;
-   String policyholderSmokingStatus;
-   double policyholderHeight;
-   double policyholderWeight;
-   
+   private int policyNum;
+   private String providerName;
+   private PolicyHolder policyHolder;
+     
    //no args Constructor
    public Policy()
    {
       //initializing variables for the Policy class when no arguments are given
       policyNum = 0;
       providerName = "";
-      policyholderFstNm = "";
-      policyholderLstNm = "";
-      policyholderAge = 0;
-      policyholderSmokingStatus = "";
-      policyholderHeight = 0;
-      policyholderWeight = 0;
+      policyHolder = new PolicyHolder();
    }
    
    /*
@@ -28,24 +18,14 @@ public class Policy
       
       @param polNum The policy number.
       @param proNm The policy provider's name.
-      @param polholderFstNm The policyholders first name.
-      @param polholderLstNm The policyholders last name.
-      @param polholderAge The policyholders age.
-      @param polholderSmkStat The policyholders smoking status.
-      @param polholderWght The policyholders weight.
-      @param polholderHght The policy holders height.
+      @param policyHolder an instance of the PolicyHolder class containt all of the policyholders information.
    */
-   public Policy(int polNum, String proNm, String polholderFstNm, String polholderLstNm, int polholderAge, String polholderSmkStat, double polholderHght, double polholderWght)
+   public Policy(int policyNum, String providerName, PolicyHolder policyHolder)
    {
       //initializing variables for the policy class according to the constructors fields
-      policyNum = polNum;
-      providerName = proNm;
-      policyholderFstNm = polholderFstNm;
-      policyholderLstNm = polholderLstNm;
-      policyholderAge = polholderAge;
-      policyholderSmokingStatus = polholderSmkStat;
-      policyholderHeight = polholderHght;
-      policyholderWeight = polholderWght;
+      this.policyNum = policyNum;
+      this.providerName = providerName;
+      this.policyHolder = policyHolder;
    }
    
    /*
@@ -73,67 +53,67 @@ public class Policy
    /*
       Method for changing the policyholder's first name.
       
-      @param polFstNm The policyholder's first name.
+      @param firstName The policyholder's first name.
       @return Returns void.
    */
-   public void setPolicyholderFirstName(String polFstNm)
+   public void setPolicyholderFirstName(String firstName)
    {
-      policyholderFstNm = polFstNm;
+      policyHolder.setPolicyHolderFirstName(firstName);
    }
    
    /*
       Method for changing the policyholder's last name.
       
-      @param polLstNm The policyholder's last name.
+      @param lastName The policyholder's last name.
       @return Returns void.
    */
-   public void setPolicyholderLstNm(String polLstNm)
+   public void setPolicyholderLstNm(String lastName)
    {
-      policyholderLstNm = polLstNm;
+      policyHolder.setPolicyHolderLastName(lastName);
    }
    
    /*
       Method for changing the policyholder's age.
       
-      @param polAge The policyholder's age.
+      @param age The policyholder's age.
       @return Returns void.
    */
-   public void setPolicyholderAge(int polAge)
+   public void setPolicyholderAge(int age)
    {
-      policyholderAge = polAge;
+      policyHolder.setPolicyHolderAge(age);
    }
    
    /*
       Method for changing the policyholder's smoking status.
       
-      @param polSmkStat The policyholder's smoking status.
+      @param smokingStatus The policyholder's smoking status.
       @return Returns void.
    */
-   public void setSmokingStaus(String polSmkStat)
+   public void setSmokingStaus(String smokingStatus)
    {
-      policyholderSmokingStatus = polSmkStat;
+      policyHolder.setPolicyHolderSmokingStatus(smokingStatus);
    }
    
    /*
       Method for changing the policyholder's height.
       
-      @param polHght The policyholder's height.
+      @param height The policyholder's height.
       @return Returns void.
    */
-   public void setPolicyholderHeight(double polHght)
+   public void setPolicyholderHeight(double height)
    {
-      policyholderHeight = polHght;
+      policyHolder.setPolicyHolderHeight(height);
    }
    
    /*
       Method for changing the policyholder's weight.
       
-      @param polWght The policyholder's weight.
+      @param weight The policyholder's weight.
       @return Returns void.
    */
-   public void setPolicyholderWeight(double polWght)
+   public void setPolicyholderWeight(double weight)
    {
-      policyholderWeight = polWght;
+      policyHolder.setPolicyHolderWeight(weight);
    }
    
    /*
@@ -163,7 +143,7 @@ public class Policy
    */
    public String getPolicyholderFirstName()
    {
-      return policyholderFstNm;
+      return policyHolder.getPolicyHolderFirstName();
    }
    
    /*
@@ -173,7 +153,7 @@ public class Policy
    */
    public String getPolicyholderLastName()
    {
-      return policyholderLstNm;
+      return policyHolder.getPolicyHolderLastName();
    }
    
    /*
@@ -182,7 +162,7 @@ public class Policy
       @return Returns the policyholder's age.
    */   public int getPolicyholderAge()
    {
-      return policyholderAge;
+      return policyHolder.getPolicyHolderAge();
    }
    
    /*
@@ -192,7 +172,7 @@ public class Policy
    */
    public String getPolicyholderSmokingStatus()
    {
-      return policyholderSmokingStatus;
+      return policyHolder.getPolicyHolderSmokingStatus();
    }
    
    /*
@@ -202,7 +182,7 @@ public class Policy
    */
    public double getPolicyholderHeight()
    {
-      return policyholderHeight;
+      return policyHolder.getPolicyHolderHeight();
    }
    
    /*
@@ -212,7 +192,7 @@ public class Policy
    */
    public double getPolicyholderWeight()
    {
-      return policyholderWeight;
+      return policyHolder.getPolicyHolderWeight();
    }
    
    /*
@@ -222,7 +202,7 @@ public class Policy
    */
    public double getPolicyholderBMI()
    {
-      return ((policyholderWeight*703)/(policyholderHeight*policyholderHeight));
+      return policyHolder.getPolicyHolderBMI();
    }
    
       /*
@@ -233,17 +213,17 @@ public class Policy
    public double getPolicyPrice()
    {
       double policyPrice = 600;
-      if (policyholderAge > 50)
+      if (policyHolder.getPolicyHolderAge() > 50)
       {
          policyPrice += 75;
       }
-      if (policyholderSmokingStatus.equalsIgnoreCase("smoker"))
+      if (policyHolder.getPolicyHolderSmokingStatus().equalsIgnoreCase("smoker"))
       {
          policyPrice += 100;
       }
-      if (((policyholderWeight*703)/(policyholderHeight*policyholderHeight)) > 35)
+      if (policyHolder.getPolicyHolderBMI() > 35)
       {
-         policyPrice += ((((policyholderWeight*703)/(policyholderHeight*policyholderHeight))-35)*20);
+         policyPrice += ((policyHolder.getPolicyHolderBMI()-35)*20);
       }
       return policyPrice;
    } 
