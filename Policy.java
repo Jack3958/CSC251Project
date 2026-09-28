@@ -245,4 +245,9 @@ public class Policy
       
       return str;
    }
+   
+   public int getPolicyCount()
+   {
+      return policyTracker;
+   }
 }
