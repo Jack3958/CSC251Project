@@ -227,4 +227,19 @@ public class Policy
       }
       return policyPrice;
    } 
+   
+    /*
+      Method for converting the contents of the object into a string
+      
+      @return Returns the object's contents as a String
+   */
+   public String toString()
+   {
+      String str = "Policy Number: " + policyNum +
+                   "\nProvider Name: " + providerName +
+                   "\n" + policyHolder +
+                   String.format("\nPolicy Price: %.2f%n", this.getPolicyPrice());
+      
+      return str;
+   }
 }
