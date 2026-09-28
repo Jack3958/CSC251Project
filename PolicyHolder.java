@@ -174,5 +174,22 @@ public class PolicyHolder
    {
       return ((weight*703)/(height*height));
    }
-
+   
+   /*
+      Method for converting the contents of the object into a string
+      
+      @return Returns the object's contents as a String
+   */
+   public String toString()
+   {
+      String str = "Policyholder's First Name: " + firstName +
+                   "\nPolicyholder's Last Name: " + lastName +
+                   "\nPolicyholder's Age: " + age +`
+                   "\nPolicyholder's Smoking Status: " + smokingStatus +
+                   "\nPolicyholder's Height: " + height + " inches" +
+                   "\nPolicyholder's Weight: " + weight + " pounds" +
+                   String.format("\nPolicyholder's BMI: %.2f%n", this.getPolicyHolderBMI());
+      
+      return str;
+   }
 }
